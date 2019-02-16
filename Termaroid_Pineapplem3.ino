@@ -1,4 +1,4 @@
-/*Licened by : pineapplem3.com | Compiled and Programmed by : Nirmal Ram
+/*Licened by : pineapplem3.com | Compiled and Programmed by : Nirmal Ram*/
 
 
 #include<Wire.h>
@@ -62,8 +62,15 @@ void loop() {
   Serial.println(" ");
   delay(1000);
 
-  servoup();
-
-  servodown();
-
+  for (int i = -800 , j = 700 ; i < -10000 , j < 1900 ; i-- , j++)
+  {
+    if ( GyX == i || GyY == i || GyZ == j)
+    {
+      servoup();
+    }
+    else
+    {
+      servodown();
+    }
+  }
 }
